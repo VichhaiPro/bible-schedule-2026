@@ -66,6 +66,39 @@
 • <strong>Week 3:</strong> Vichhai<br>
 • <strong>Lai</strong> will lead after the 3-week cycle continues to the next month<br>
 • Bible study starts from <strong>Romans chapter 1</strong> and continues to <strong>Romans chapter 16</strong>, then repeats the cycle
+
+<br>
+
+
+<!-- Weekly Progress -->
+<section id="weekly-progress" style="margin-top:40px;">
+  <h2>✅ Small Group – Weekly Progress</h2>
+  <p style="text-align:center;color:#666;">✓ គូសសញ្ញា នៅពេលរៀនចប់</p>
+  <ul style="list-style:none;padding:0;font-size:18px;">
+    <li><label><input type="checkbox" class="week-check" data-week="week1">Week 1 – Romans Chapter 1</label></li>
+    <li><label><input type="checkbox" class="week-check" data-week="week2">Week 2 – Romans Chapter 2</label></li>
+    <li><label><input type="checkbox" class="week-check" data-week="week3">Week 3 – Romans Chapter 3</label></li>
+    <li><label><input type="checkbox" class="week-check" data-week="week4">Week 4 – Discussion & Review</label></li>
+  </ul>
+</section>
+
+<!-- Scripts -->
+<script>
+  function showLang(lang) {
+    document.getElementById('kh-bible').style.display = (lang==='kh') ? 'block' : 'none';
+    document.getElementById('en-bible').style.display = (lang==='en') ? 'block' : 'none';
+  }
+
+  // Save weekly checkboxes in localStorage
+  const checkboxes = document.querySelectorAll('.week-check');
+  checkboxes.forEach(box => {
+    const key = box.dataset.week;
+    box.checked = localStorage.getItem(key) === 'true';
+    box.addEventListener('change', () => {
+      localStorage.setItem(key, box.checked);
+    });
+  });
+</script>
 <hr>
 <h2>This week Tuesday, January 27 </h2>
 <h2>Lead By: សំរិទ្ធ វិឆៃ </h2>
