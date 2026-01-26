@@ -36,3 +36,13 @@ body {
     table { font-size: 10pt; }
     .note { page-break-inside: avoid; }
   }
+body { font-family:'Segoe UI', Arial, sans-serif; margin:0; padding:0; background:#f2f2f7; color:#333; }
+  section { max-width:950px; margin:40px auto; padding:30px; background:#fff; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.08); }
+  h2 { color:#6a1b9a; text-align:center; margin-bottom:15px; }
+  p { line-height:1.7; color:#555; }
+  ul { margin-left:20px; line-height:1.7; }
+  button { cursor:pointer; border-radius:20px; padding:10px 22px; margin:5px; font-size:15px; }
+  .btn-primary { background:#6a1b9a; color:#fff; border:none; }
+  .btn-outline { background:#f3e8fd; color:#6a1b9a; border:1px solid #6a1b9a; }
+  input[type=checkbox] { margin-right:10px; transform:scale(1.2); }
+
