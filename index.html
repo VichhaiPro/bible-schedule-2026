@@ -161,27 +161,56 @@ input[type="checkbox"] { margin-right:10px; }
 </style>
 <br>
 
-<section id="worship-video" style="
-  max-width:950px;
-  margin:40px auto;
-  padding:30px;
-  background:#fff;
-  border-radius:12px;
-  font-family:'Khmer OS Siemreap','Segoe UI', Arial, sans-serif;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-">
+<section id="meeting-board" style="margin:40px auto; max-width:900px;">
+  <h2>🙏📝 Meeting Notes & Prayer Board</h2>
 
-<hr>
-<h2>ចម្រៀង សប្តាហ៍នេះ</h2>
+  <!-- DATE & LEADER -->
+  <div style="margin-bottom:15px;">
+    <label><strong>Date:</strong></label>
+    <input type="date" id="meetingDate" onchange="saveMeta()">
 
-<div style="text-align:center;margin-top:20px;">
-  <iframe width="800" height="450"
-    src=""
-    
-  </iframe>
-</div>
+    <label style="margin-left:15px;"><strong>Leader:</strong></label>
+    <select id="meetingLeader" onchange="saveMeta()">
+      <option value="">Select leader</option>
+      <option value="Lai">Lai</option>
+      <option value="Bonthoeurn">Bonthoeurn</option>
+      <option value="David">David</option>
+      <option value="Vichhai">Vichhai</option>
+    </select>
+  </div>
 
+  <!-- TABS -->
+  <div style="margin-bottom:10px;">
+    <button onclick="showTab('prayer')">🙏 Prayer Requests</button>
+    <button onclick="showTab('notes')">📝 Meeting Notes</button>
+    <button onclick="printMeeting()">🖨️ Print / PDF</button>
+  </div>
+
+  <!-- PRAYER TAB -->
+  <div id="prayerTab">
+    <textarea
+      id="prayerNote"
+      placeholder="• Prayer request\n• Family\n• Health\n• Ministry..."
+      style="width:100%; min-height:160px; padding:12px;"
+      oninput="savePrayer()"
+    ></textarea>
+
+    <button onclick="clearPrayer()" style="margin-top:8px;">🗑️ Clear Prayer</button>
+  </div>
+
+  <!-- NOTES TAB -->
+  <div id="notesTab" style="display:none;">
+    <textarea
+      id="meetingNote"
+      placeholder="• Key sharing point\n• Teaching highlight\n• Action steps..."
+      style="width:100%; min-height:160px; padding:12px;"
+      oninput="saveMeetingNote()"
+    ></textarea>
+
+    <button onclick="clearMeetingNote()" style="margin-top:8px;">🗑️ Clear Notes</button>
+  </div>
 </section>
+<section>
 
 <section id="romans-study" style="
   max-width:950px;
